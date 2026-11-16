@@ -828,7 +828,7 @@ a:focus-visible,button:focus-visible{outline:2px solid rgba(212,170,188,.75);out
 .v31-photo-avatar img{object-fit:cover!important;object-position:50% 50%!important;transform:none!important;}
 </style></head><body>
 <header aria-label="Main navigation" class="site-header"><a aria-label="Minakshee Narayankar — go to home" class="site-brand" href="#home">Minakshee Narayankar</a><div class="nav-shell">
-<nav aria-label="Portfolio sections" class="site-nav" id="site-nav"><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#education">Education</a><a href="#blogs">Blogs</a></nav>
+<nav aria-label="Portfolio sections" class="site-nav" id="site-nav"><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#education">Education</a><a href="#blogs">Blogs</a><a href="https://drive.google.com/file/d/1IqnYIvu2zfHBh0Sfzd30JHN3pKbFivHW/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="View CV in Google Drive (opens in a new tab)">CV</a></nav>
 <button aria-expanded="false" aria-label="Open navigation" class="mobile-menu" id="mobile-menu">Menu</button>
 <!-- <button aria-label="Toggle light or dark mode" class="theme-button" id="theme-button" title="Toggle light or dark mode"><svg viewbox="0 0 24 24"><path d="M20.5 14.7A8.5 8.5 0 0 1 9.3 3.5 8.6 8.6 0 1 0 20.5 14.7Z"></path></svg></button> -->
 </div></header>
@@ -1042,7 +1042,7 @@ a:focus-visible,button:focus-visible{outline:2px solid rgba(212,170,188,.75);out
  const menuButton=document.getElementById('mobile-menu'), nav=document.getElementById('site-nav');
  menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));});
  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}));
- const links=[...nav.querySelectorAll('a')]; const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+ const links=[...nav.querySelectorAll('a[href^="#"]')]; const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
  function mark(){let selected=-1;const threshold=window.scrollY+window.innerHeight*.28;for(let i=0;i<sections.length;i++)if(sections[i].getBoundingClientRect().top+window.scrollY<=threshold)selected=i; if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-20)selected=links.length-1;links.forEach((a,i)=>a.classList.toggle('active',i===selected));}
  window.addEventListener('scroll',mark,{passive:true});mark();
 
